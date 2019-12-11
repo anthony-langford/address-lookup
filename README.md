@@ -6,11 +6,11 @@
 ## 📦 Install
 
 ```bash
-npm install antd
+npm install scc-address-lookup
 ```
 
 ```bash
-yarn add antd
+yarn add scc-address-lookup
 ```
 
 ## 🔨 Usage
