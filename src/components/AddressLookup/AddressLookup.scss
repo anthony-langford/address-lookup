@@ -63,7 +63,7 @@
     .ext-field {
       input {
         width: 200px;
-        padding: 8px 10px;
+        padding: 6px 10px;
         border: 1px solid $grey-mid;
         border-radius: 4px;
 
@@ -103,8 +103,7 @@
   }
 
   .description {
-    color: $black;
-    font-weight: 600;
+    color: $blue;
   }
 
   .address-preview {
@@ -153,11 +152,11 @@
       .address-search-list {
         position: absolute;
         background: white;
+        border-radius: 4px;
         padding: 10px;
         list-style: none;
         z-index: 10000;
         border: 1px solid $grey-mid;
-        border-radius: 4px;
 
         .address-search-list-item {
           border-bottom: 1px solid $grey-mid;
