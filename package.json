@@ -1,5 +1,5 @@
 {
-  "name": "address-lookup",
+  "name": "scc-address-lookup",
   "version": "1.0.0",
   "description": "A component to lookup addresses 📍",
   "main": "build/index.js",
