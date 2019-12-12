@@ -1,7 +1,7 @@
 <h1 align=center>Address Lookup</h1>
 <p align=center>A world-class address lookup component.</p>
 
-[![Dependencies](https://img.shields.io/david/anthony-langford/address-lookup)](https://david-dm.org/anthony-langford/address-lookup) [![DevDependencies](https://img.shields.io/david/dev/anthony-langford/address-lookup)](https://david-dm.org/anthony-langford/address-lookup?type=dev) ![License](https://img.shields.io/badge/license-MIT-green)
+[![Dependencies](https://img.shields.io/david/anthony-langford/address-lookup)](https://david-dm.org/anthony-langford/address-lookup) [![DevDependencies](https://img.shields.io/david/dev/anthony-langford/address-lookup)](https://david-dm.org/anthony-langford/address-lookup?type=dev) ![Rating](https://img.shields.io/badge/rating-5%2F5-brightgreen) ![License](https://img.shields.io/badge/license-MIT-green)
 
 ## 📦 Install
 
