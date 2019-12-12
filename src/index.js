@@ -1,5 +1,5 @@
-import AddressLookup from './components/AddressLookup';
+import AddressLookup from './components';
 import './styles/index.scss';
 import 'antd/dist/antd.css';
 
-export default AddressLookup;
+export { AddressLookup as default };

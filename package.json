@@ -1,14 +1,18 @@
 {
   "name": "scc-address-lookup",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A component to lookup addresses 📍",
-  "main": "build/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "start": "webpack --watch",
     "build": "webpack",
     "storybook": "start-storybook",
+    "transpile": "rm -rf dist && babel src -d dist --copy-files --ignore 'src/**/*.stories.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/anthony-langford/address-lookup.git"
@@ -33,11 +37,8 @@
     "antd": "^3.26.2",
     "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
     "react-geosuggest": "^2.12.1",
-    "react-phone-input-2": "^2.11.0",
-    "webpack": "^4.41.2"
+    "react-phone-input-2": "^2.11.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.5",
@@ -48,6 +49,7 @@
     "@storybook/react": "^5.2.8",
     "babel-loader": "^8.0.6",
     "babel-plugin-import": "^1.13.0",
+    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.3.0",
     "eslint": "^6.7.2",
     "eslint-config-airbnb": "^18.0.1",
@@ -58,8 +60,15 @@
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.13.0",
     "prettier": "^1.19.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.1",
+    "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
+  },
+  "peerDependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   }
 }

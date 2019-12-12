@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 // Components
-import AddressLookup from './AddressLookup';
+import AddressLookup from '../../index';
 
 export default { title: 'Address Lookup' };
 

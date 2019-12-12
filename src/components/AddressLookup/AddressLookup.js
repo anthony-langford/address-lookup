@@ -142,7 +142,16 @@ const AddressLookup = ({ selectedAddress, setSelectedAddress }) => {
       </div>
       <div className="ext-field">
         <div className="label">Extension:</div>
-        <input placeholder="Ext." />
+        <input
+          placeholder="Ext."
+          onChange={e => {
+            setSelectedAddress({
+              ...selectedAddress,
+              extension: e.target.value,
+            });
+          }}
+          value={selectedAddress.extension || ''}
+        />
       </div>
     </>
   );
