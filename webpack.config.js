@@ -13,7 +13,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(ts|js)$/,
         include: path.resolve(__dirname, 'src'),
         exclude: /(node_modules|build|dist|.storybook)/,
         use: {
@@ -30,6 +30,6 @@ module.exports = {
     react: 'react',
   },
   resolve: {
-    extensions: ['.js', '.scss'],
+    extensions: ['.ts', '.tsx', '.js', '.scss'],
   },
 };

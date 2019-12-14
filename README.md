@@ -39,7 +39,7 @@ Or clone locally:
 git clone git@github.com:anthony-langford/address-component.git
 cd address-component
 npm install
-npm run storybook
+npm start
 ```
 
 ## 🎫 License

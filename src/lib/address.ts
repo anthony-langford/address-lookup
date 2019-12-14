@@ -1,4 +1,6 @@
-const getAddressLines = address => {
+import { Address } from '../interfaces/Address';
+
+const getAddressLines = (address: Address) => {
   if (!address) return [];
   return [
     (address.unit ? `${address.unit} - ` : '') + address.address,
@@ -7,7 +9,7 @@ const getAddressLines = address => {
   ];
 };
 
-const getOneLineAddress = address => {
+const getOneLineAddress = (address: Address) => {
   if (!address) return '';
   return getAddressLines(address)[0];
 };

@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
+import { storiesOf } from '@storybook/react';
 
 // Components
-import AddressLookup from '../../index';
+import { AddressLookup } from '../../index';
 
-export default { title: 'Address Lookup' };
+// export default { title: 'Address Lookup' };
+const stories = storiesOf('Components', module);
 
-export const withText = () => {
+const AddressLookupComponent = () => {
   const [selectedAddress, setSelectedAddress] = useState();
 
   return (
@@ -26,3 +28,7 @@ export const withText = () => {
     </div>
   );
 };
+
+stories.add('Address Lookup', () => <AddressLookupComponent />, {
+  info: { inline: true },
+});
