@@ -1,13 +1,13 @@
 {
   "name": "scc-address-lookup",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A component to lookup addresses 📍",
   "main": "dist/index.js",
   "scripts": {
     "start": "start-storybook",
     "build": "rm -rf dist && tsc",
     "transpile": "rm -rf dist && babel src -d dist --copy-files --ignore 'src/**/*.stories.js' --extensions '.ts,.tsx,.js' --source-maps inline",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "files": [
     "dist"
@@ -50,11 +50,12 @@
     "@babel/preset-typescript": "^7.7.4",
     "@storybook/react": "^5.2.8",
     "@types/antd": "^1.0.0",
+    "@types/jest": "^24.0.23",
     "@types/lodash": "^4.14.149",
-    "@types/react-geosuggest": "^2.7.10",
-    "@types/styled-components": "4.1.8",
     "@types/react": "^16.9.16",
     "@types/react-dom": "^16.9.4",
+    "@types/react-geosuggest": "^2.7.10",
+    "@types/styled-components": "4.1.8",
     "@typescript-eslint/eslint-plugin": "^2.11.0",
     "@typescript-eslint/parser": "^2.11.0",
     "babel-loader": "^8.0.6",
@@ -66,9 +67,11 @@
     "eslint-plugin-import": "^2.19.1",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.17.0",
+    "jest": "^24.9.0",
     "prettier": "^1.19.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "ts-jest": "^24.2.0",
     "typescript": "^3.7.3"
   },
   "peerDependencies": {
