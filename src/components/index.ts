@@ -1,1 +1,1 @@
-export { default as AddressLookup } from './AddressLookup';
+export { AddressLookup } from './AddressLookup';

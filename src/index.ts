@@ -1,2 +1,2 @@
 import 'antd/dist/antd.css';
-export { default as AddressLookup } from './components';
+export { AddressLookup } from './components';

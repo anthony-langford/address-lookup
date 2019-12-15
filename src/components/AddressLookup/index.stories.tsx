@@ -6,7 +6,7 @@ import { AddressLookup } from '../../index';
 
 const stories = storiesOf('Components', module);
 
-const AddressLookupWrapper = (): React.ReactElement => {
+stories.add('Address Lookup', () => {
   const [selectedAddress, setSelectedAddress] = useState();
 
   return (
@@ -26,6 +26,4 @@ const AddressLookupWrapper = (): React.ReactElement => {
       </div>
     </div>
   );
-};
-
-stories.add('Address Lookup', () => <AddressLookupWrapper />);
+});
