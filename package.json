@@ -1,6 +1,6 @@
 {
   "name": "scc-address-lookup",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A component to lookup addresses 📍",
   "main": "dist/index.js",
   "scripts": {
