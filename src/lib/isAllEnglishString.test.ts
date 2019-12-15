@@ -1,4 +1,4 @@
-import isAllEnglishString from './isAllEnglishString';
+import { isAllEnglishString } from './isAllEnglishString';
 
 describe('isAllEnglishString', () => {
   test('English string', () => {

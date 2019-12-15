@@ -1,6 +1,6 @@
 import { Address } from '../interfaces/Address';
 
-const getAddressLines = (address: Address) => {
+export const getAddressLines = (address: Address): string[] => {
   if (!address) return [];
   return [
     (address.unit ? `${address.unit} - ` : '') + address.address,
@@ -9,9 +9,7 @@ const getAddressLines = (address: Address) => {
   ];
 };
 
-const getOneLineAddress = (address: Address) => {
+export const getOneLineAddress = (address: Address): string => {
   if (!address) return '';
   return getAddressLines(address)[0];
 };
-
-export { getAddressLines, getOneLineAddress };

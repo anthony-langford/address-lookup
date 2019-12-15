@@ -1,3 +1,1 @@
-import AddressLookup from './AddressLookup';
-
-export default AddressLookup;
+export { default as AddressLookup } from './AddressLookup';

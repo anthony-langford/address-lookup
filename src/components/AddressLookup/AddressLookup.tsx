@@ -24,7 +24,7 @@ import {
 } from './styles';
 
 // Helpers
-import isAllEnglishString from '../../lib/isAllEnglishString';
+import { isAllEnglishString } from '../../lib/isAllEnglishString';
 import { getAddressLines } from '../../lib/address';
 
 // Interfaces
@@ -38,15 +38,15 @@ interface AddressLookupProps {
 const AddressLookup: React.FC<AddressLookupProps> = ({
   selectedAddress,
   setSelectedAddress,
-}) => {
-  const [lookupFailed, setLookupFailed] = useState(false);
-  const [error, setError] = useState();
+}): React.ReactElement => {
+  const [lookupFailed, setLookupFailed] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>();
 
   useEffect(() => {
     setError(null);
   }, [selectedAddress]);
 
-  const onSuggestSelect = (suggest: any) => {
+  const onSuggestSelect = (suggest: any): void => {
     if (!suggest || !suggest.gmaps || !suggest.gmaps.address_components) return;
 
     const { address_components } = suggest.gmaps;
@@ -77,7 +77,7 @@ const AddressLookup: React.FC<AddressLookupProps> = ({
     }
   };
 
-  const buildAddressSearchBar = () => (
+  const buildAddressSearchBar = (): React.ReactElement => (
     <AddressSearchWrapper>
       <SearchBarWrapper>
         <Label>Street Name</Label>
@@ -101,10 +101,12 @@ const AddressLookup: React.FC<AddressLookupProps> = ({
     </AddressSearchWrapper>
   );
 
-  const buildAddressDetails = () => {
+  const buildAddressDetails = (): React.ReactElement | null => {
     if (!selectedAddress) return null;
 
-    const renderInput = <field extends keyof Address>(field: field) => {
+    const renderInput = <field extends keyof Address>(
+      field: field
+    ): React.ReactElement => {
       const value = selectedAddress[field];
       const isValid = isAllEnglishString(value);
 
@@ -151,104 +153,16 @@ const AddressLookup: React.FC<AddressLookupProps> = ({
     );
   };
 
-  // const buildPhoneNumber = () => (
-  //   <Row>
-  //     <FieldWrapper>
-  //       <Label>Phone number:</Label>
-  //       <ReactPhoneInput
-  //         country="ca"
-  //         enableAreaCodes
-  //         value={selectedAddress.phoneNumber}
-  //         onChange={(phoneNumber: string) =>
-  //           setSelectedAddress({ ...selectedAddress, phoneNumber })
-  //         }
-  //         placeholder="Phone #"
-  //         inputClass="react-phone-input2"
-  //         inputStyle={{
-  //           width: window.innerWidth < 768 ? '100%' : '200px',
-  //           borderRadius: '4px',
-  //         }}
-  //       />
-  //     </FieldWrapper>
-  //     <FieldWrapper className="ext-field">
-  //       <Label>Extension:</Label>
-  //       <Input
-  //         placeholder="Ext."
-  //         onChange={e => {
-  //           setSelectedAddress({
-  //             ...selectedAddress,
-  //             extension: e.target.value,
-  //           });
-  //         }}
-  //         value={selectedAddress.extension || ''}
-  //       />
-  //     </FieldWrapper>
-  //   </Row>
-  // );
-
-  // const buildSelectResidenceType = () => (
-  //   <FieldWrapper>
-  //     <Label>Residence Type:</Label>
-  //     <Select
-  //       onSelect={(buildingType: any) =>
-  //         setSelectedAddress({ ...selectedAddress, buildingType })
-  //       }
-  //       value={selectedAddress.buildingType || '----------'}
-  //       style={{ width: '200px' }}
-  //     >
-  //       <Select.Option value="is_house">House</Select.Option>
-  //       <Select.Option value="is_apartment">Condo</Select.Option>
-  //       <Select.Option value="is_business">Business</Select.Option>
-  //     </Select>
-  //   </FieldWrapper>
-  // );
-
-  // const buildGroundFloor = () => (
-  //   <FieldWrapper>
-  //     <Label>Ground Floor:</Label>
-  //     <Select
-  //       onSelect={(isGroundFloor: string) =>
-  //         setSelectedAddress({ ...selectedAddress, isGroundFloor })
-  //       }
-  //       value={selectedAddress.isGroundFloor || '----------'}
-  //       style={{ width: '200px' }}
-  //     >
-  //       <Select.Option value="NO">NO</Select.Option>
-  //       <Select.Option value="YES">YES</Select.Option>
-  //     </Select>
-  //   </FieldWrapper>
-  // );
-
-  // const buildElevatorAccess = () => (
-  //   <Row>
-  //     <FieldWrapper>
-  //       <Label>Elevator Access:</Label>
-  //       <Select
-  //         onSelect={(elevatorAccess: string) =>
-  //           setSelectedAddress({ ...selectedAddress, elevatorAccess })
-  //         }
-  //         value={selectedAddress.elevatorAccess || '----------'}
-  //         style={{ width: '200px' }}
-  //         disabled={selectedAddress.isGroundFloor !== 'NO'}
-  //       >
-  //         <Select.Option value="NO">NO</Select.Option>
-  //         <Select.Option value="YES">YES</Select.Option>
-  //       </Select>
-  //     </FieldWrapper>
-  //   </Row>
-  // );
-
-  const buildAddressPreview = () => {
+  const buildAddressPreview = (): React.ReactElement[] | null => {
     if (!selectedAddress) return null;
     const completedAddress = { ...selectedAddress };
     completedAddress.address = `${completedAddress.streetNumber} ${completedAddress.streetName}`;
     completedAddress.unit = selectedAddress.unit;
     const lines = getAddressLines(completedAddress);
-    console.log(lines);
     return lines.map(line => <div key={line}>{line}</div>);
   };
 
-  const buildAdditionalInfo = () => (
+  const buildAdditionalInfo = (): React.ReactElement => (
     <div className="additional-info">
       <Description>
         Please fill out some additional info on this address
