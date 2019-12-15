@@ -244,6 +244,7 @@ const AddressLookup: React.FC<AddressLookupProps> = ({
     completedAddress.address = `${completedAddress.streetNumber} ${completedAddress.streetName}`;
     completedAddress.unit = selectedAddress.unit;
     const lines = getAddressLines(completedAddress);
+    console.log(lines);
     return lines.map(line => <div key={line}>{line}</div>);
   };
 

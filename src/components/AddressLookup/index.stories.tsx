@@ -4,10 +4,9 @@ import { storiesOf } from '@storybook/react';
 // Components
 import { AddressLookup } from '../../index';
 
-// export default { title: 'Address Lookup' };
 const stories = storiesOf('Components', module);
 
-const AddressLookupComponent = () => {
+const AddressLookupWrapper = () => {
   const [selectedAddress, setSelectedAddress] = useState();
 
   return (
@@ -29,6 +28,4 @@ const AddressLookupComponent = () => {
   );
 };
 
-stories.add('Address Lookup', () => <AddressLookupComponent />, {
-  info: { inline: true },
-});
+stories.add('Address Lookup', () => <AddressLookupWrapper />);
