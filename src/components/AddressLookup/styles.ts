@@ -6,33 +6,33 @@ import Geosuggest from 'react-geosuggest';
 // Constants
 import { colors, device, breakpoints } from '../../styles/partials';
 
-const AddressLookupWrapper = styled.div`
+export const AddressLookupWrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-const AddressSearchWrapper = styled.div`
+export const AddressSearchWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
 `;
 
-const AddressSearchBarWrapper = styled.div`
+export const AddressSearchBarWrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-const SearchBarWrapper = styled.div`
+export const SearchBarWrapper = styled.div`
   flex: 1;
 `;
 
-const Label = styled.label`
+export const Label = styled.label`
   font-size: 14px;
   font-weight: 500;
   color: ${colors.CHARCOAL};
 `;
 
-const SearchBar = styled(Geosuggest)`
+export const SearchBar = styled(Geosuggest)`
   .address-search-list {
     position: absolute;
     background: white;
@@ -77,12 +77,12 @@ const SearchBar = styled(Geosuggest)`
   }
 `;
 
-const UnitInputWrapper = styled.div`
+export const UnitInputWrapper = styled.div`
   width: 100px;
   margin-left: 20px;
 `;
 
-const UnitInput = styled.input`
+export const UnitInput = styled.input`
   border: 1px solid ${colors.YELLOW};
   border-radius: 4px;
   width: 100%;
@@ -90,7 +90,7 @@ const UnitInput = styled.input`
   color: ${colors.CHARCOAL};
 `;
 
-const Description = styled.div`
+export const Description = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -98,12 +98,12 @@ const Description = styled.div`
   color: ${colors.BLUE};
 `;
 
-const FormWrapper = styled.div`
+export const FormWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
 
-const FieldWrapper = styled.div`
+export const FieldWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 20px;
@@ -117,7 +117,7 @@ const FieldWrapper = styled.div`
   }
 `;
 
-const Input = styled.input`
+export const Input = styled.input`
   width: 200px;
   padding: 6px 10px;
   border: 1px solid ${colors.GREY_MID};
@@ -128,7 +128,7 @@ const Input = styled.input`
   }
 `;
 
-const AddressDetailsWrapper = styled.div`
+export const AddressDetailsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
@@ -137,35 +137,17 @@ interface AddressInputProps {
   error: boolean;
 }
 
-const AddressInput = styled.input<AddressInputProps>`
+export const AddressInput = styled.input<AddressInputProps>`
   width: 200px;
   padding: 8px 10px;
   border: 2px solid ${props => (props.value ? colors.GREEN : colors.RED)};
   border-radius: 4px;
 `;
 
-const AddressPreviewWrapper = styled.div`
+export const AddressPreviewWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
 `;
-
-export {
-  AddressLookupWrapper,
-  AddressSearchBarWrapper,
-  AddressSearchWrapper,
-  SearchBarWrapper,
-  Label,
-  SearchBar,
-  UnitInputWrapper,
-  UnitInput,
-  Description,
-  FormWrapper,
-  FieldWrapper,
-  Input,
-  AddressDetailsWrapper,
-  AddressInput,
-  AddressPreviewWrapper,
-};
